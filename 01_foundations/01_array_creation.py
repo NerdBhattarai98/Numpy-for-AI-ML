@@ -4,7 +4,7 @@ import numpy as np
 # np.array() - To create numpy arrays ---------------------------------------
 # syntax: numpy.array(object, dtype=None, *, copy=True, order='K', subok=False, ndmin=0, like=None)
 
-A = np.array([1, 2, 3, 4, 5])
+A = np.array([1, 2, 3, 4, 5],ndim = 3)
 print("Original Array:", A)
 
 copy1_arr = np.array(A)
