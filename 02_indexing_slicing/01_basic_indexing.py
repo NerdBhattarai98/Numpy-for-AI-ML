@@ -181,3 +181,142 @@ print(ThreeD[:,row])
 coln = 1
 print(ThreeD[:,:,coln])
 print(ThreeD[layer,row,coln])
+
+#Slicing of Array
+
+# : means “take this range
+
+#Syntax : array[start : stop : step]
+
+#1)Basic Slicing [start : stop]
+
+A = np.array([1,2,3,4,5,6,7,8,9,10])
+
+# Slice from index 2 up to (but excluding) index 6
+print(A[2:6]) 
+
+#Slice from beginning but excluding index 4
+print(A[:4])
+
+#Slicing from one index number to end
+print(A[5:])
+
+#Return Full copy of array
+print(A[:])
+
+#2)  array[start:stop:step]
+
+#Starting from 0 till index 8(Excluding) with 2 steps
+print(A[0:8:2])
+
+#Print All numbers from beginning to end but step 3
+print(A[::3])
+
+#Negative Index #Starts from the last(reverses the array)
+print(A[::-1])
+
+#Start at index 7 to index 2 -2 at each step
+print(A[7:2:-2]) #[8 6 4]
+print(A[7:2:2]) #Returns Empty
+
+#Last Three elements
+print(A[-3:])
+
+print(A[-4:-1])
+
+# 2D Slicing
+
+B = np.array([[1,2,3,4],
+              [5,6,7,8],
+              [9,10,11,12],
+              [13,14,15,16]])
+
+# array[row_slice, column_slice]
+
+#  Select rows
+
+#First Row
+print(B[0])
+
+#Second Row
+print(B[1])
+
+#Third Row
+print(B[2])
+
+#Fourth Row
+print(B[3])
+
+#  Select columns
+#First Column
+print(B[:,0])
+
+#Second Column
+print(B[:,1])
+
+#Third Column
+print(B[:,2])
+
+#Fourth Column
+print(B[:,3])
+#  Select a rectangular section
+print(B[0:2,0:3])
+#  Slice specific rows + columns
+print(B[0:2,0:3])
+print(B[0:1,1:3])
+
+# array[row_start : row_stop : row_step , col_start : col_stop : col_step]
+#  Reverse rows
+
+#First Row
+print(B[::-1])
+#  Reverse columns
+print(B[:,::-1])
+#  Step through rows
+print(B[::2])
+#  Step through columns
+print(B[:,::2])
+
+# 3D Slicing
+
+#  array[layer_slice, row_slice, column_slice]
+# array[
+#     d_start : d_stop : d_step,  # Axis 0: Depth / Layer / Page
+#     r_start : r_stop : r_step,  # Axis 1: Rows
+#     c_start : c_stop : c_step   # Axis 2: Columns
+# ]
+
+A= np.arange(1,31).reshape(2,3,5)
+print(A)
+#  Select layers
+
+#first Layer
+print(A[0])
+
+#Second Layer
+print(A[1])
+
+#  Slice rows inside layers
+print(A[0,0:1])
+#  Slice columns inside layers
+print(A[:,:,0])
+#  Slice layers + rows + columns together
+print(A[0:1,0:2,0:3])
+
+#  Reverse layers
+print(A[::-1])
+#  Reverse rows
+print(A[:,::-1])
+#  Reverse columns
+print(A[:,:,::-1])
+
+#  Step slicing across dimensions
+
+#Steps Across layers
+print(A[::1,:,:])
+
+#Steps Across Rows
+print(A[::1,::2,:])
+
+#Steps Across Columns
+print(A[:,:,::2])
