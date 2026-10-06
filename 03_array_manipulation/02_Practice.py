@@ -1,6 +1,10 @@
 # import numpy as np
 # A = np.arange(1, 13)                      # 1 to 12
 # M = np.array([[1, 2, 3], [4, 5, 6]])
+
+
+
+
 # reshape and -1: Reshape A into (3, 4), then (2, 2, 3), then use -1 to get (4, -1). Print the shape of each. Then try A.reshape(5, -1) in try/except and print the error. Why does it fail?
 # flatten vs ravel: Make f = M.flatten() and r = M.ravel(). Set f[0] = 99 and r[1] = 77. Print M, and confirm with np.shares_memory which one touched the original.
 # Transpose: Print M.T and M.T.shape. Then, without running it, predict the shape of A.reshape(3, 4).T, then check.
