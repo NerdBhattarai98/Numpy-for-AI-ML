@@ -16,7 +16,7 @@ print(A.reshape((4,-1)))
 f = M.flatten()
 r = M.ravel()
 
-f[0] - 99
+f[0] = 99
 r[1]=77 #ravel is a view
 
 print(M)
@@ -50,11 +50,19 @@ print(np.array_equal(A,B))
 # squeeze: Create np.zeros((1, 3, 1, 4)). Print its shape after np.squeeze. Then use np.squeeze(x, axis=0) and print that shape. 
 # What does axis= change?
 
+# squeeze and axis: with no axis,
+# squeeze removes every size-1 dimension, so (1,3,1,4) becomes (3,4).
+# With axis=0 it removes only that one, giving (3,1,4), which is why you saw 3 dimensions.
+# If the axis you name isn't size 1, you get an error.
+
+print("Squeeze")
+
 A= np.zeros((1,3,1,4))
 print(A)
 print(np.squeeze(A))
 print(np.squeeze(A,axis =0 ))
 
+print("Squeeze")
 #Thw Dimesntion changes due to axis = 0 why but Like when axis = 0 it gived 3 dimn but in normal ome it is 2 dimn
 # concatenate: Join M with np.array([[7, 8, 9]]) along axis=0. 
 # Then try axis=1 in try/except. Why does it fail, and what would you change to make it work?
